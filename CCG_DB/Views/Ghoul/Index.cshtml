@@ -4,16 +4,16 @@
     ViewData["Title"] = "Ghoul";
 }
 <h1>@ViewData["Title"]</h1>
+<button><a class="nav-link text-dark" asp-area="" asp-controller="Ghoul" asp-action="Add">Add Ghoul</a></button>
 
 <table class="table">
-    <tr><th>Photo</th><th>Name</th><th>Rank</th><th>Description</th></tr>
+    <tr><th>Photo</th><th>Name</th><th>Rank</th><th>Info</th><th>Edit</th><th>Delete</th></tr>
     @foreach (var item in Model)
     {
         <tr>
             <td><img src="@item.ImageUrl" style="border-radius:20px; width:40px; height:40px"/></td>
             <td>@item.Name</td>
             <td>@item.Rank</td>
-            <td>@item.Description</td>
             <td>
                 <a asp-action="Info" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/info-icon.png" /></a>
             </td>   
@@ -28,6 +28,3 @@
         </tr>
     }
 </table>
-
-
-<button><a class="nav-link text-dark" asp-area="" asp-controller="Ghoul" asp-action="Add">Add Ghoul</a></button>

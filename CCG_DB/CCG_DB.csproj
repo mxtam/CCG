@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Ghoul\InfoPage\" />
+    <Folder Include="Photos\" />
   </ItemGroup>
 
 </Project>

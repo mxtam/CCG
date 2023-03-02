@@ -8,11 +8,12 @@ namespace CCG_DB.Controllers
     public class GhoulController : Controller
     {
         ApplicationContext db;
-        
 
+        string currentPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "Ghoul", "InfoPage");
+        
         public GhoulController(ApplicationContext db)
         {
-            this.db = db;
+            this.db = db; 
         }
 
         [HttpGet]
@@ -33,7 +34,7 @@ namespace CCG_DB.Controllers
          
             db.Ghouls.Add(ghoul);
 
-            string path = $"C:\\Users\\Illia\\source\\repos\\CCG_DB\\CCG_DB\\Views\\Ghoul\\InfoPage\\{ghoul.Name}-Info.cshtml";
+            string path = Path.Combine(currentPath,$"{ghoul.Name}-Info.cshtml");
 
             CustomMethods.CreateInfoPage(path, ghoul.Name, ghoul.Rank, ghoul.Description, ghoul.ImageUrl); ;
 
@@ -51,7 +52,7 @@ namespace CCG_DB.Controllers
                 if (ghoul != null)
                 {
                     db.Ghouls.Remove(ghoul);
-                    string path = $"C:\\Users\\Illia\\source\\repos\\CCG_DB\\CCG_DB\\Views\\Ghoul\\InfoPage\\{ghoul.Name}-Info.cshtml";
+                    string path = Path.Combine(currentPath, $"{ghoul.Name}-Info.cshtml");
 
                     CustomMethods.DeleteInfoPage(path);
 
@@ -89,7 +90,7 @@ namespace CCG_DB.Controllers
            
             db.Ghouls.Update(ghoul);
 
-            string path = $"C:\\Users\\Illia\\source\\repos\\CCG_DB\\CCG_DB\\Views\\Ghoul\\InfoPage\\{ghoul.Name}-Info.cshtml";
+            string path = Path.Combine(currentPath, $"{ghoul.Name}-Info.cshtml");
 
             CustomMethods.CreateInfoPage(path, ghoul.Name, ghoul.Rank, ghoul.Description, ghoul.ImageUrl);
 
