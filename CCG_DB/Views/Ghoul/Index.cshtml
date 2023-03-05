@@ -4,27 +4,37 @@
     ViewData["Title"] = "Ghoul";
 }
 <h1>@ViewData["Title"]</h1>
-<button><a class="nav-link text-dark" asp-area="" asp-controller="Ghoul" asp-action="Add">Add Ghoul</a></button>
+<button><a class="nav-link text-dark"  asp-controller="Ghoul" asp-action="Add">Add Ghoul</a></button><br/>
 
-<table class="table">
-    <tr><th>Photo</th><th>Name</th><th>Rank</th><th>Info</th><th>Edit</th><th>Delete</th></tr>
+<div class="row">
     @foreach (var item in Model)
     {
-        <tr>
-            <td><img src="@item.ImageUrl" style="border-radius:20px; width:40px; height:40px"/></td>
-            <td>@item.Name</td>
-            <td>@item.Rank</td>
-            <td>
-                <a asp-action="Info" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/info-icon.png" /></a>
-            </td>   
-            <td>
-                <a asp-action="Edit" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/edit-icon.png"/></a>
-            </td>
-            <td>
-                 <form asp-controller="Ghoul" asp-action="Delete" method="post"  asp-route-id="@item.Id">
-                     <input class="delete" type="submit" value=""/>
-                 </form>
-            </td>
-        </tr>
+        <div class="col-md-4 col-xs-6 border-primary mb-3">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-12" style="background-color:dimgrey">
+                        <div class="card-header text-black" >
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @item.Name
+                                    <a class="float-right" asp-action="Info" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/info-icon.png" /></a>
+                                    <a class="float-right" asp-action="Edit" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/edit-icon.png" /></a>
+                                    <a class="float-right" asp-action="Delete" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/delete-icon.png" /></a>
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="background-color:grey">
+                        <img src="@item.ImageUrl" width=100% alt="@item.Name">
+                    </div>
+                    <div class="col-md-6" style="background-color:grey">
+                        <div class="card-body">
+                            <p class="card-text"><b>Name: </b>@item.Name</p>
+                            <p class="card-text"><b>Rank: </b>@item.Rank</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
-</table>
+</div>

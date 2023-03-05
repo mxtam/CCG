@@ -14,7 +14,7 @@ namespace CCG_DB
 }}
 <h1>{name}</h1>
 <label>Photo:</label><br/>
-<img src=""{imageUrl}"" style="" width:10%; height:12%; border-radius:20px"" /><br/>
+<img src=""{imageUrl}"" style="" width:10%; height:12%;"" /><br/>
 <label>Name:    </label> 
 <label>{name}</label><br /> 
 <label>Rank:    </label>

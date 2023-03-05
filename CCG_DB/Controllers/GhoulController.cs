@@ -42,6 +42,12 @@ namespace CCG_DB.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete()
+        {
+   
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Delete(int? id)
         {
