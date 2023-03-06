@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g7hFV4FS93GKJ3sMxBxixeIWlz45HHMxemS9W763zkI=",
+  "Hash": "G2EdUF9/fI4cRrBfA3H+NUVOwzlcVnI4GqBPKVHowjE=",
   "Source": "CCG_DB",
   "BasePath": "_content/CCG_DB",
   "Mode": "Default",
@@ -1120,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Illia\\source\\repos\\CCG_DB\\CCG_DB\\wwwroot\\top-icon.png",
+      "SourceId": "CCG_DB",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Illia\\source\\repos\\CCG_DB\\CCG_DB\\wwwroot\\",
+      "BasePath": "_content/CCG_DB",
+      "RelativePath": "top-icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\top-icon.png"
     }
   ]
 }

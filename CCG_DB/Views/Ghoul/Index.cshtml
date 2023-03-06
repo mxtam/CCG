@@ -3,8 +3,7 @@
 @{
     ViewData["Title"] = "Ghoul";
 }
-<h1>@ViewData["Title"]</h1>
-<button><a class="nav-link text-dark"  asp-controller="Ghoul" asp-action="Add">Add Ghoul</a></button><br/>
+<h1>@ViewData["Title"] <button class="addbtn"><a class="nav-link text-dark" asp-controller="Ghoul" asp-action="Add">Add</a></button><br /></h1>
 
 <div class="row">
     @foreach (var item in Model)
@@ -38,3 +37,4 @@
         </div>
     }
 </div>
+<a class="top" href="#top"><img src="~/top-icon.png"/></a>

@@ -55,9 +55,14 @@ textarea.valid {
 }
 
 footer {
-    position:absolute;
+    position:fixed;
     bottom: 0px;
     width: 100%;
 }
 
+.top {
+    position:fixed;
+    bottom:45px;
+    right:5px;
+}
 
