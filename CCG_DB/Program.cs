@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using CCG_DB.Models;
 using Microsoft.Extensions.FileProviders;
+using CCG_DB.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

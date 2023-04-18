@@ -17,6 +17,7 @@
                                 <h5 class="card-title">
                                     @item.Name
                                     <a class="float-right" asp-action="Info" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/info-icon.png" /></a>
+                                    <a class="float-right" asp-action="Details" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/info-icon.png" /></a>
                                     <a class="float-right" asp-action="Edit" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/edit-icon.png" /></a>
                                     <a class="float-right" asp-action="Delete" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/delete-icon.png" /></a>
                                 </h5>

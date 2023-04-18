@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Services\" />
     <Folder Include="Views\Ghoul\InfoPage\" />
-    <Folder Include="Photos\" />
   </ItemGroup>
 
 </Project>

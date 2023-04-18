@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CCG_DB.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace CCG_DB.Models
+namespace CCG_DB.Data
 {
-    public class ApplicationContext: DbContext
+    public class ApplicationContext : DbContext
     {
         public DbSet<Ghoul> Ghouls { get; set; } = null!;
         public DbSet<Investigators> Investigator { get; set; } = null!;

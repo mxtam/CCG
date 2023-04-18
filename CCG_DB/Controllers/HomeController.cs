@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
+using CCG_DB.Data;
 
 namespace CCG_DB.Controllers
 {
