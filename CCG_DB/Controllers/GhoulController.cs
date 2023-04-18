@@ -6,25 +6,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using System.Xml.Linq;
 using CCG_DB.Data;
+using CCG_DB.Data.Services;
 
 namespace CCG_DB.Controllers
 {
     public class GhoulController : Controller
     {
-        ApplicationContext db;
+        private readonly IGhoulService _service;
         
-        public GhoulController(ApplicationContext db)
+        public GhoulController(IGhoulService service)
         {
-            this.db = db; 
+            _service= service;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await db.Ghouls.ToListAsync());
+            return View(await _service.GetAllAysnc());
 
         }
-        
+
         public IActionResult Add()
         {
 
@@ -33,71 +34,49 @@ namespace CCG_DB.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Add(Ghoul ghoul)
-        { 
-         
-            db.Ghouls.Add(ghoul);
+        {
 
-            await db.SaveChangesAsync();
+            await _service.AddAsync(ghoul);
 
             return RedirectToAction("Index");
         }
 
         public IActionResult Delete()
         {
-   
+
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int id)
         {
-          
-            if (id != null)
-            {
-                Ghoul? ghoul = await db.Ghouls.FirstOrDefaultAsync(p => p.Id == id);
-                if (ghoul != null)
-                {
-                    db.Ghouls.Remove(ghoul);
 
-                    await db.SaveChangesAsync();
-                    return RedirectToAction("Index");
-                }
-            }
-            
-            return NotFound();
+            await _service.DeleteAsync(id);
+
+            return RedirectToAction("Index");
         }
 
-      
 
-        public async Task<IActionResult> Details(int? id)
+
+        public async Task<IActionResult> Details(int id)
         {
-            Ghoul? ghoul = await db.Ghouls.FirstOrDefaultAsync(p => p.Id == id);
-            if (ghoul != null)
-            {
-                return View(ghoul);
-
-            }
-            return BadRequest();
+            var ghoul = await _service.GetByIdAsync(id);
+            if(ghoul==null) return NotFound();
+            return View(ghoul);
 
         }
 
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id != null)
-            {
-                Ghoul? ghoul = await db.Ghouls.FirstOrDefaultAsync(p => p.Id == id);
-                if (ghoul != null) return View(ghoul);
-            }
-            return NotFound();
+            var ghoul = await _service.GetByIdAsync(id);
+            if (ghoul == null) return NotFound();
+            return View(ghoul);
         }
 
         [HttpPost]
         public async Task<IActionResult> Edit(Ghoul ghoul)
         {
-           
-            db.Ghouls.Update(ghoul);
-
-            await db.SaveChangesAsync();
+            await _service.UpdateAsync(ghoul);
             return RedirectToAction("Index");
         }
 
