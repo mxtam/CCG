@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CCG_DB.Models;
 using CCG_DB.Data.Services;
+using CCG_DB.Data.ViewModels;
+using System;
 
 namespace CCG_DB.Controllers
 {
@@ -27,10 +29,10 @@ namespace CCG_DB.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Ghoul ghoul)
+        public async Task<IActionResult> Add(GhoulViewModel ghoulvm)
         {
-
-            await _service.AddAsync(ghoul);
+            
+            await _service.AddAsync(ghoulvm);
 
             return RedirectToAction("Index");
         }
@@ -68,9 +70,10 @@ namespace CCG_DB.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Ghoul ghoul)
+        public async Task<IActionResult> Edit(GhoulViewModel ghoulvm, int id)
         {
-            await _service.UpdateAsync(ghoul);
+            
+            await _service.UpdateAsync(ghoulvm,id);
             return RedirectToAction("Index");
         }
 

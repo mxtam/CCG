@@ -4,7 +4,7 @@
 }
 
 <h1>Edit ghoul</h1>
-<form asp-action="Edit" asp-controller="Ghoul">
+<form asp-action="Edit" asp-controller="Ghoul" enctype="multipart/form-data">
     <p>
         <label asp-for="Name">Name</label><br />
         <input type="text" asp-for="Name" /><br />
@@ -31,9 +31,9 @@
         <span asp-validation-for="Description" />
     </p>
     <p>
-        <label asp-for="ImageUrl">Add image URL</label><br />
-        <input type="text" asp-for="ImageUrl">
-        <span asp-validation-for="ImageUrl" />
+        <label asp-for="Photo">Add photo</label><br />
+        <input type="file" asp-for="Photo">
+        <span asp-validation-for="Photo" />
     <p />
     <p>
         <input type="submit" value="Save" />

@@ -565,3 +565,4 @@ C:\Users\Illia\source\repos\CCG_DB\CCG_DB\bin\Debug\net7.0\Microsoft.AspNetCore.
 C:\Users\Illia\source\repos\CCG_DB\CCG_DB\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\Illia\source\repos\CCG_DB\CCG_DB\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Illia\source\repos\CCG_DB\CCG_DB\obj\Debug\net7.0\CCG_DB.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Illia\source\repos\CCG_DB\CCG_DB\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll

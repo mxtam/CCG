@@ -7,9 +7,9 @@ namespace CCG_DB.Data
     {
         public DbSet<Ghoul> Ghouls { get; set; } = null!;
         public DbSet<Investigators> Investigator { get; set; } = null!;
-        public ApplicationContext(DbContextOptions<ApplicationContext> options)
-           : base(options)
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 

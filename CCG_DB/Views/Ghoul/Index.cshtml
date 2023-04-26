@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Ghoul";
 }
-<h1>@ViewData["Title"] <button class="addbtn"><a class="nav-link text-dark" asp-controller="Ghoul" asp-action="Add">Add</a></button><br /></h1>
+<h1>@ViewData["Title"] <button class="addbtn"><a class="nav-link text-dark" asp-controller="Ghoul" asp-action="Add">+</a></button><br /></h1>
 
 <div class="row">
     @foreach (var item in Model)
@@ -16,7 +16,6 @@
                             <p class="card-text">
                                 <h5 class="card-title">
                                     @item.Name
-                                    <a class="float-right" asp-action="Info" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/info-icon.png" /></a>
                                     <a class="float-right" asp-action="Details" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/info-icon.png" /></a>
                                     <a class="float-right" asp-action="Edit" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/edit-icon.png" /></a>
                                     <a class="float-right" asp-action="Delete" asp-controller="Ghoul" asp-route-id="@item.Id"><img src="~/delete-icon.png" /></a>
@@ -25,7 +24,7 @@
                         </div>
                     </div>
                     <div class="col-md-6" style="background-color:grey">
-                        <img src="@item.ImageUrl" width=100% alt="@item.Name">
+                        <img style="max-height:150px" src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Photo))" width=100% alt="@item.Name">
                     </div>
                     <div class="col-md-6" style="background-color:grey">
                         <div class="card-body">

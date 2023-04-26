@@ -1,4 +1,5 @@
-﻿using CCG_DB.Models;
+﻿using CCG_DB.Data.ViewModels;
+using CCG_DB.Models;
 
 namespace CCG_DB.Data.Services
 {
@@ -6,8 +7,8 @@ namespace CCG_DB.Data.Services
     {
         Task<IEnumerable<Ghoul>> GetAllAysnc();
         Task<Ghoul> GetByIdAsync(int id);
-        Task AddAsync(Ghoul ghoul);
-        Task UpdateAsync(Ghoul ghoul);
+        Task AddAsync(GhoulViewModel ghoulvm);
+        Task UpdateAsync(GhoulViewModel ghoulvm, int id);
         Task DeleteAsync(int id);
     }
 }

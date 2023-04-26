@@ -6,7 +6,7 @@
 <h1>@Model.Name</h1>
 <label>Photo:</label>
 <br />
-<img src="@Model.ImageUrl" style="width:10%; height:12%;" />
+<img src=" data:image/jpeg;base64,@(Convert.ToBase64String(Model.Photo))" style="width:10%; height:12%;" />
 <br />
 <label>Name:    </label>
 <label>@Model.Name</label>

@@ -11,7 +11,7 @@ namespace CCG_DB.Models
         [Required(ErrorMessage = "Description not set")]
         public string Description { get; set; } = "";
         [Required(ErrorMessage = "Choose photo")]
-        public string? ImageUrl { get; set; }
+        public byte[]? Photo { get; set; }
     }
     
 }
